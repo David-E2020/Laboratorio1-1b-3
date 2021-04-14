@@ -118,6 +118,55 @@ public class OperacionesMaterialBibliografico {
         }
     }
     
+    public void eliminarLibros(String nombre) {
+        int sw=0;
+        if (listaLibros != null) {
+            System.out.println("---------------------------------------");
+            for (Libro libroAux : listaLibros) {
+                if(nombre.equalsIgnoreCase(libroAux.getTitulo())){
+                    System.out.println("*** Libro encontrado ***");
+                    System.out.println("");
+                    libroAux.mostrar();
+                    listaLibros.remove(libroAux);
+                    System.out.println("Libro eliminado");
+                    System.out.println("---------------------------------------");
+                    sw=1;
+                }
+            }
+            if (sw==0) {
+                System.out.println("*** Libro no encontrado. ***");
+            }
+            System.out.println("");
+        } else {
+            System.out.println("***No tiene libros registrados***");
+        }
+    }
+    
+    public void eliminarProyecto(String nombre) {
+        int sw=0;
+        if (listaProyectoGrado != null) {
+            System.out.println("---------------------------------------");
+            for (ProyectoGrado libroAux : listaProyectoGrado) {
+                if(nombre.equalsIgnoreCase(libroAux.getTitulo())){
+                    System.out.println("*** Libro encontrado ***");
+                    System.out.println("");
+                    libroAux.mostrar();
+                    listaProyectoGrado.remove(libroAux);
+                    System.out.println("Proyecto eliminado");
+                    System.out.println("---------------------------------------");
+                    guardarObjetos();
+                    sw=1;
+                }
+            }
+            if (sw==0) {
+                System.out.println("*** Libro no encontrado. ***");
+            }
+            System.out.println("");
+        } else {
+            System.out.println("***No tiene libros registrados***");
+        }
+    }
+    
     
     //CREANDO UN ARCHIVO
     public void crearArchivo(){

@@ -21,10 +21,9 @@ public class principalMaterialBibliografico {
             System.out.println("4. Guardar los registros");
             System.out.println("5. Mostrar Datos");
             System.out.println("6. Buscar libro por titulo");
-            //System.out.println("6. Bloquear Tarjeta");
-            //System.out.println("7. Depositar Dinero");
-            //System.out.println("8. Retiro de Dinero");
-            System.out.println("7. salir");
+            System.out.println("7. Eliminar libro");
+            System.out.println("8. Eliminar proyecto");
+            System.out.println("9. salir");
             System.out.println("Digite una opcion");
             opc = leer.nextInt();
             switch (opc) {
@@ -60,6 +59,18 @@ public class principalMaterialBibliografico {
                     leer.nextLine();
                     String titulo=leer.nextLine();
                     obj.buscarLibros(titulo);
+                    break;
+                case 7:
+                    leer.nextLine();
+                    System.out.println("Digite el monbre del libro a liminar:");
+                    String libro=leer.nextLine();
+                    obj.eliminarLibros(libro);
+                    break;
+                case 8:
+                    leer.nextLine();
+                    System.out.println("Digite el monbre del libro a liminar:");
+                    String proyecto=leer.nextLine();
+                    obj.eliminarProyecto(proyecto);
                     break;
                 default:
                     continuar = false;
